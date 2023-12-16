@@ -1,0 +1,33 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#map,
+body,
+html {
+  height: 100%;
+}
+
+.legend {
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  border-style: solid;
+}
+
+.legend_header {
+  text-align: center;
+}
+
+.color {
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  display: inline;
+}
+
+.range {
+  padding: 10px;
+  align-items: center;
+  display: inline;
+}
