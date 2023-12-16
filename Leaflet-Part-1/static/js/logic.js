@@ -22,7 +22,7 @@ function createMap(earthquake_url, plates_url) {
     }
 
     d3.json(earthquake_url).then (earthquakeData => {
-        console.log(earthquakeData.features);
+        //console.log(earthquakeData.features);
         let earthquakes = L.geoJSON(earthquakeData.features, {
             onEachFeature: createPopup,
             pointToLayer: createMarker
@@ -113,4 +113,4 @@ function createLegend(map) {
     info.addTo(map);
 }
 
-createMap(url, plates_url2);
+createMap(url2, plates_url2);

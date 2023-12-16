@@ -22,7 +22,7 @@ function createMap(earthquake_url, plates_url) {
     }
 
     d3.json(earthquake_url).then (earthquakeData => {
-        console.log(earthquakeData.features);
+        //console.log(earthquakeData.features);
         let earthquakes = L.geoJSON(earthquakeData.features, {
             onEachFeature: createPopup,
             pointToLayer: createMarker
@@ -66,7 +66,7 @@ function createMap(earthquake_url, plates_url) {
         })
         createMap(L.layerGroup(markers));
     })
-    
+
 function createMarker(feature) {
     return {
         radius: (feature.properties.mag**2)*10000,
@@ -99,7 +99,7 @@ function createLegend(map) {
     info.onAdd = function() {
         let div = L.DomUtil.create("div", "legend");
         let i = 0;
-        div.innerHTML += "<h3 class=legend_header>Depth</h3>"
+        div.innerHTML += "<h3 class=legend_header>Depth</h3>";
         colorRange.forEach(color => {
             div.innerHTML += `<svg class=color style=\"background-color: ${color}"></svg>`;
             if (i < colorDomain.length - 1)
@@ -113,4 +113,4 @@ function createLegend(map) {
     info.addTo(map);
 }
 
-createMap(url, plates_url2);
+createMap(url2, plates_url2);
